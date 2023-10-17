@@ -1,0 +1,29 @@
+hundreds of companies have licensed the ARM CPU, yeah, hard for RISC-V but need to make the courage moves
+
+licensee must follow the 
+- ARM CPU architecture
+- Instruction set
+
+but they are free to implement peripherals:
+- I/O ports
+- ADCs
+- DACs
+- Timers
+- SPIs, I2Cs, UARTs
+
+-> for the CPU, code is portable but not for the peripherals like I/Oports cause their:
+- Special funtion registers
+- Physical address locations to access the I/O ports
+are not standardized and every licensee implements it differently 
+(why there exist AUTOSAR compilant)
+
+2 ways of approach:
+- use the functions written by the vendor to access the peripherals 
+  -> copyrighted, not portable
+
+- access the peripheral's special function registers directly using C and   
+  create your own library since you have total control over each function.
+  Also these functions can be modified and used with another vendor
+  
+
+
